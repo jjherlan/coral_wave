@@ -14,19 +14,14 @@ require(purrr)
 require(factoextra)
 require(pander)
 require(ggridges)
+require(readr)
 ```
 
-```{r, include = FALSE}
-am_sam_tut_hsig.main <- read.csv("am_sam_tut_hsig.csv")
-```
-
-```{r}
-#show a part of the data
-kable(am_sam_tut_hsig.main[1:10, 1:10], caption = "")
-```
+\#`{r} #show a part of the data #kable(am_sam_tut_hsig.main[1:10, 1:10], caption = "") #`
 
 ```{r, include = FALSE}
 hsig.main <-
+  read_csv("am_sam_tut_hsig.csv") %>%
   am_sam_tut_hsig.main %>%
   mutate_at(vars(site), factor) %>%
   pivot_longer(cols = hsig1:hsig500, names_to = 'hsig', values_to = 'wave')
@@ -150,7 +145,7 @@ for(i in 1:4){
 ```
 :::
 
-### **Clusters stability: *k-means*** 
+### **Clusters stability: *k-means***
 
 ##### Using the bootstrap method, assess the stability of clusters when using k-means.
 

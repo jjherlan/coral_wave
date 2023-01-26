@@ -47,6 +47,8 @@ website:
         text: Acknowledgements
       - href: content/waves.qmd
         text: Waves
+      - href: content/wtf.qmd
+        text: wtf
 
 format:
   html:

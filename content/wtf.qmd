@@ -1,5 +1,0 @@
----
-title: "wtf"
-author: "wtf"
-editor: visual
----

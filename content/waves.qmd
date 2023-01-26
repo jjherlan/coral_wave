@@ -21,7 +21,7 @@ require(readr)
 
 ```{r, include = FALSE}
 hsig.main <-
-  read_csv("am_sam_tut_hsig.csv") %>%
+  readr::read_csv("am_sam_tut_hsig.csv") %>%
   mutate_at(vars(site), factor) %>%
   pivot_longer(cols = hsig1:hsig500, names_to = 'hsig', values_to = 'wave')
 ```

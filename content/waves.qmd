@@ -4,6 +4,10 @@ author: "James J. Herlan"
 editor: visual
 ---
 
+```{r}
+library(tidyverse)
+```
+
 ```{r, include = FALSE}
 am_sam_tut_hsig.main <- read_csv(here::here("content", "am_sam_tut_hsig.csv"))
 ```

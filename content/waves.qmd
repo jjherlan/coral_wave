@@ -1,13 +1,7 @@
 ---
 title: "Waves"
-author: "JJH"
-date: "Last compiled on `r format(Sys.time(), '%d %B, %Y %H:%M')`"
-output:
-  html_document:
-    toc: true
-    toc_float: true
-    keep_md: true
-    self_contained: true
+author: "James J. Herlan"
+editor: visual
 ---
 
 ```{r echo = TRUE, include = FALSE}
@@ -69,8 +63,8 @@ dist_meth = c("euclidean", "manhattan", "bray", "jaccard")
 dist_m = map(as.list(dist_meth), vegdist, x = tut_sh.table)
 ```
 
-1.  Determine the optimal number of clusters to use
-2.  Define function find_k for plotting scree plot to show how within groups sum of square (WSS) and average Silhouette width (Si) change with different number of clusters used.
+1. Determine the optimal number of clusters to use
+2. Define function find_k for plotting scree plot to show how within groups sum of square (WSS) and average Silhouette width (Si) change with different number of clusters used.
 
 ```{r}
 find_k <- function(data, plot_title = ""){
@@ -93,8 +87,8 @@ find_k <- function(data, plot_title = ""){
 }
 ```
 
-1.  Scree plots
-2.  Define plot titles
+1. Scree plots
+2. Define plot titles
 
 ```{r}
 dist_meas = c("Euclidean", "Manhattan", "Bray-Curtis", "Jaccard")
@@ -106,7 +100,8 @@ We show a scatter plot in this section.
 
 #### Plots
 
-::: panel-tabset
+:::: {.panel-tabset}
+
 ```{r, results = "asis"}
 for(i in 1:4){
   cat("\n")
@@ -115,10 +110,10 @@ for(i in 1:4){
   cat("\n")
 }
 ```
-:::
+
+::::
 
 #### Perform k-means clustering to analyze the clusters of stations
-
 ##### Conduct k-means to find clusters
 
 ```{r}
@@ -140,12 +135,11 @@ colnames(km_cluster) <- dist_meas
 ```
 
 ### **Silhoulette plots: results for k-means clustering**
-
-##### Plot the Silhouette plots for k-means clustering.
-
+##### Plot the Silhouette plots for k-means clustering. 
 ###### Click on the tabs to see results for different distance methods.
 
-::: panel-tabset
+:::: {.panel-tabset}
+
 ```{r, results = "asis"}
 for(i in 1:4){
   cat("\n")
@@ -154,15 +148,17 @@ for(i in 1:4){
   cat("\n")
 }
 ```
-:::
 
-### **Clusters stability: *k-means*** 
+::::
 
-##### Using the bootstrap method, assess the stability of clusters when using k-means.
+### **Clusters stability: *k-means* **
+
+##### Using the bootstrap method, assess the stability of clusters when using k-means. 
 
 ###### Click on different tabs to see results for different distance methods.
 
-::: panel-tabset
+:::: {.panel-tabset}
+
 ```{r, results = "asis"}
 for(i in 1:4){
   cat("\n")
@@ -173,10 +169,11 @@ for(i in 1:4){
   cat("\n")
 }
 ```
-:::
 
-1.  Perform hierarchical clustering to analyze the clusters of stations
-2.  Perform hierarchical clustering on different distance measures and linkage methods
+::::
+
+1. Perform hierarchical clustering to analyze the clusters of stations
+2. Perform hierarchical clustering on different distance measures and linkage methods
 
 ```{r}
 hc_agg = list()
@@ -188,14 +185,13 @@ for(i in 1:4){
 ```
 
 #### **Dendrogram: results for hierarchical clustering**
-
 ##### Define plot titles
 
 ```{r}
 link_meth = c("Single", "Complete", "Average",  "Ward's")
 ```
 
-##### Plot the dendrograms for hierarchical clustering.
+##### Plot the dendrograms for hierarchical clustering. 
 
 ###### Click on different tabs to see results for different distance methods with different linkage methods.
 
@@ -218,11 +214,12 @@ for(i in 1:4)
 
 #### Clusters stability: hierarchical clustering
 
-##### Using the bootstrap method, assess the stability of clusters when using hierarchical clustering.
+##### Using the bootstrap method, assess the stability of clusters when using hierarchical clustering. 
 
 ###### Click on different tabs to see results for different distance methods with different linkage methods.
 
-::: panel-tabset
+::: {.panel-tabset}
+
 ```{r}
 #| results: asis
 for(i in 1:4){
@@ -241,12 +238,12 @@ for(i in 1:4){
   cat("\n")
 }
 ```
+
 :::
 
 ### Cluster analysis result
 
 ##### Report stations in different group
-
 ##### Extract indice for cluster from result of heirarchical clustering using -- and --
 
 ###### **The following does not work!!**
@@ -291,7 +288,6 @@ pander(clust_name, split.cell = 35)
 ```
 
 ##### Compare copepod composition in the 2 clusters
-
 ##### Compute average composition percentage for every copepod for each group
 
 ```{r}
@@ -312,7 +308,7 @@ pander(clust_name, split.cell = 35)
 # dom_g3 = dom_species_name[g_mean[[3]] > g_mean[[1]] + g_mean[[2]]]
 ```
 
-#### More *k*-means
+#### More *k*-means 
 
 ```{r}
 distance <- get_dist(tut_sh.table)
@@ -347,7 +343,9 @@ str(k2)
 k2
 ```
 
-\#`{r} #fviz_cluster(k2, data = am_sam_tut_hsig.df) #`
+#```{r}
+#fviz_cluster(k2, data = am_sam_tut_hsig.df)
+#```
 
 ```{r}
 am_sam_tut_hsig.df %>%
@@ -357,3 +355,34 @@ am_sam_tut_hsig.df %>%
   ggplot(aes(hsig1, hsig2, color = factor(cluster), label = site)) +
   geom_text()
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

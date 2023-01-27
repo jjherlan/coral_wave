@@ -47,7 +47,7 @@ website:
         text: Acknowledgements
       - href: content/test.qmd
         text: test
-      - href: content/waves.Rmd
+      - href: content/waves.qmd
         text: Waves
 
 format:

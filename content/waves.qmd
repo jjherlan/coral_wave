@@ -40,7 +40,7 @@ ggplot(hsig.main, aes(x = wave, y = site, fill = stat(x))) +
 ```
 
 ```{r, include = FALSE}
-am_sam_tut_hsig.mat <- read_csv("am_sam_tut_hsig.csv") %>%
+am_sam_tut_hsig.mat <- read_csv(here::here("content", "am_sam_tut_hsig.csv")) %>%
   column_to_rownames(var = "site") %>%
   as.matrix()
 ```
@@ -317,7 +317,7 @@ fviz_dist(distance, gradient = list(low = "#00AFBB", mid = "white", high = "#FC4
 ```
 
 ```{r, include = FALSE}
-am_sam_tut_hsig.main <- read.csv("am_sam_tut_hsig.csv")
+am_sam_tut_hsig.main <- read_csv(here::here("content", "am_sam_tut_hsig.csv"))
 ```
 
 ```{r}
@@ -325,7 +325,7 @@ am_sam_tut_hsig.main
 ```
 
 ```{r, include = FALSE}
-am_sam_tut_hsig.df <- read.csv("am_sam_tut_hsig.csv") %>%
+am_sam_tut_hsig.df <- read_csv(here::here("content", "am_sam_tut_hsig.csv")) %>%
   column_to_rownames(var = "site")
 ```
 

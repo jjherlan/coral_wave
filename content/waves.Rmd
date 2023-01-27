@@ -11,7 +11,7 @@ output:
 ---
 
 ```{r echo = TRUE, include = FALSE}
-library(tidyverse)
+require(tidyverse)
 require(vegan)
 require(knitr)
 require(fpc)

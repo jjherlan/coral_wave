@@ -18,7 +18,8 @@ require(readr)
 ```
 
 ```{r, include = FALSE}
-am_sam_tut_hsig.main <- readr::read_csv("am_sam_tut_hsig.csv")
+am_sam_tut_hsig.main <- read_csv("https://raw.githubusercontent.com/jjherlan/coral_wave/main/content/am_sam_tut_hsig.csv")
+
 ```
 
 ```{r}

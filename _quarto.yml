@@ -45,8 +45,8 @@ website:
         text: Code in your files
       - href: content/acknowledgements.qmd
         text: Acknowledgements
-      - href: content/waves.qmd
-        text: Waves
+      - href: content/test.qmd
+        text: test
 
 format:
   html:

@@ -27,9 +27,9 @@ jobs:
         "purrr",
         "factoextra",
         "pander",
-        "ggridges"
-        
-        ))'
+        "ggridges",
+        "here"
+        ))
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2

@@ -17,7 +17,7 @@ require(ggridges)
 ```
 
 ```{r, include = FALSE}
-am_sam_tut_hsig.main <- read_csv("am_sam_tut_hsig.csv")
+am_sam_tut_hsig.main <- read.csv("am_sam_tut_hsig.csv")
 ```
 
 ```{r}
